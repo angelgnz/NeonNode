@@ -49,14 +49,14 @@ textbox-prompt-colon {
     padding:                     10px 13px;
     border-radius:               4px;
     background-color:            @urgent;
-    text-color:                  @background;
+    text-color:                  @foreground;
 }
 prompt {
     enabled:                     true;
     padding:                     10px;
     border-radius:               4px;
     background-color:            @selected;
-    text-color:                  @background;
+    text-color:                  @urgent;
 }
 entry {
     enabled:                     true;
