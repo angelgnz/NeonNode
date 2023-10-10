@@ -233,7 +233,21 @@ apply_compositor() {
 		-e "s/method = .*/method = \"$picom_blur_method\";/g" \
 		-e "s/strength = .*/strength = $picom_blur_strength;/g" \
 		-e "s/active-opacity = .*/active-opacity = $picom_active_opacity;/g" \
-		-e "s/inactive-opacity = .*/inactive-opacity = $picom_inactive_opacity;/g"
+		-e "s/inactive-opacity = .*/inactive-opacity = $picom_inactive_opacity;/g" \
+		-e "s/\"window_type = 'dock'\",/\"window_type = '#dock'\",/g" \
+		-e "s/\"100:class_g    = 'Alacritty'\",/\"100:class_g    = '#Alacritty'\",/g"
+}
+
+# Update other Themes Vars --------------------------------
+update_themes() {
+	apply_sh="$IDIR/themes/"
+	last_val='-e "s/strength = .*/strength = $picom_blur_strength;/g"'
+	sed_text='
+	-e "s/active-opacity = .*/active-opacity = $picom_active_opacity;/g" \
+  	-e "s/inactive-opacity = .*/inactive-opacity = $picom_inactive_opacity;/g"'
+	# update apply script
+	find $apply_sh -type f -name "apply.sh" -not -path "$IDIR"/themes/"$THEME"/apply.sh" -exec grep -q "picom_active_opacity" {} \; || find $apply_sh -type f -name "apply.sh" -not -path "$IDIR"/themes/"$THEME"/apply.sh" -exec sed -i "s/$last_val/$sed_text/g" {} \;
+
 }
 
 # I3WM -------------------------------------
@@ -309,3 +323,4 @@ apply_appearance
 apply_dunst
 apply_compositor
 apply_i3wm
+update_themes
