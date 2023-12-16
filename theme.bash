@@ -75,8 +75,8 @@ picom_shadow_x='-12'
 picom_shadow_y='-12'
 picom_blur_method='dual_kawase'
 picom_blur_strength='8'
-picom_active_opacity='.8'
-picom_inactive_opacity='.5'
+picom_active_opacity='.96'
+picom_inactive_opacity='.86'
 
 # I3WM
 i3wm_fonts='JetBrainsMono Nerd Font 10'
