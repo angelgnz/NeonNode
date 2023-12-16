@@ -230,8 +230,8 @@ apply_compositor() {
 		-e "s/shadow-opacity = .*/shadow-opacity = $picom_shadow_o;/g" \
 		-e "s/shadow-offset-x = .*/shadow-offset-x = $picom_shadow_x;/g" \
 		-e "s/shadow-offset-y = .*/shadow-offset-y = $picom_shadow_y;/g" \
-		-e "s/# blur-method =.*/blur-method = \"$picom_blur_method\";/g" \
-		-e "s/# blur-strength =.*/blur-strength = $picom_blur_strength;/g" \
+		-e "s/blur-method =.*/blur-method = \"$picom_blur_method\";/g" \
+		-e "s/blur-strength =.*/blur-strength = $picom_blur_strength;/g" \
 		-e "s/active-opacity = .*/active-opacity = $picom_active_opacity;/g" \
 		-e "s/inactive-opacity = .*/inactive-opacity = $picom_inactive_opacity;/g" \
 		-e "s/\"window_type = 'dock'\",/\"window_type = '#dock'\",/g" \
